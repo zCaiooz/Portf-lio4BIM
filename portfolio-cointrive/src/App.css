@@ -1,0 +1,309 @@
+img {
+  user-select: none;
+}
+
+.app {
+  display: flex;
+  min-height: 100vh;
+  background: #11121a;
+  color: #f4f4f8;
+}
+
+/* MENU LATERAL */
+
+.sidebar {
+  width: 250px;
+  min-width: 250px;
+  min-height: 100vh;
+  background: #191a24;
+  border-right: 1px solid #292a36;
+  padding: 28px 18px;
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 55px;
+}
+
+.logo h2 {
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.logo-icon {
+  color: #a855f7;
+  font-size: 27px;
+}
+
+.menu-label {
+  color: #77798b;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  margin: 0 0 15px 10px;
+}
+
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  width: 100%;
+  padding: 13px 14px;
+  background: transparent;
+  color: #a5a6b5;
+  border: none;
+  border-radius: 9px;
+  text-align: left;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.menu-item span {
+  font-size: 17px;
+}
+
+.menu-item:hover {
+  background: #282432;
+  color: white;
+}
+
+.menu-item.active {
+  background: #38234e;
+  color: #c084fc;
+}
+
+.sidebar-footer {
+  margin-top: auto;
+  border-top: 1px solid #30303b;
+  padding: 22px 8px 0;
+}
+
+.sidebar-footer span {
+  color: #a855f7;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.sidebar-footer p {
+  color: #77798b;
+  font-size: 12px;
+  margin-top: 8px;
+}
+
+/* CONTEÚDO PRINCIPAL */
+
+.main-content {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.topbar {
+  min-height: 105px;
+  padding: 22px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #292a36;
+  background: #191a24;
+}
+
+.welcome {
+  color: #a855f7;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  margin-bottom: 7px;
+}
+
+.topbar h1 {
+  font-size: 25px;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #c5c5d0;
+  font-size: 14px;
+}
+
+.profile-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: #753bb3;
+  color: white;
+  font-weight: bold;
+}
+
+/* ÁREA DAS TELAS */
+
+.content {
+  flex: 1;
+  padding: 35px 40px;
+}
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  gap: 15px;
+}
+
+.section-heading h2 {
+  font-size: 21px;
+  margin-bottom: 8px;
+}
+
+.section-heading p {
+  color: #898b9b;
+  font-size: 14px;
+}
+
+.status {
+  background: #292038;
+  color: #c084fc;
+  border: 1px solid #49305f;
+  border-radius: 20px;
+  padding: 8px 14px;
+  font-size: 12px;
+  transition: .2s ease;
+}
+
+.status:hover {
+  background: #38234e;
+  border-color: #753bb3;
+  cursor: pointer;
+  transform: scale(1.075);
+}
+
+.image-view {
+  width: 100%;
+  height: 100%;
+  display: none;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 999;
+  filter: none;
+
+  position: fixed;
+
+  img {
+    transform: translate(20%, 15%);
+    width: 75%;
+    height: auto;
+  }
+
+  img:hover {
+    cursor: default;
+  }
+}
+
+.image-view:hover {
+  cursor:pointer;
+}
+
+.viewer-open {
+  display:block;
+}
+
+.blur-main {
+  filter: blur(20px);
+}
+
+.preview {
+  background: #1b1c27;
+  border: 1px solid #30313d;
+  border-radius: 14px;
+  padding: 25px;
+  min-height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.preview img {
+  display: block;
+  max-width: 100%;
+  max-height: 650px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+/* RODAPÉ */
+
+.footer {
+  border-top: 1px solid #292a36;
+  padding: 20px 40px;
+  color: #77798b;
+  font-size: 12px;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 768px) {
+  .app {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    min-width: 0;
+    min-height: auto;
+    padding: 18px;
+  }
+
+  .logo {
+    margin-bottom: 20px;
+  }
+
+  .sidebar nav {
+    flex-direction: row;
+    overflow-x: auto;
+    padding-bottom: 8px;
+  }
+
+  .menu-label,
+  .sidebar-footer {
+    display: none;
+  }
+
+  .menu-item {
+    width: auto;
+    white-space: nowrap;
+  }
+
+  .topbar {
+    padding: 20px;
+  }
+
+  .content {
+    padding: 25px 15px;
+  }
+
+  .preview {
+    padding: 10px;
+    min-height: 250px;
+  }
+
+  .footer {
+    padding: 18px;
+  }
+}
